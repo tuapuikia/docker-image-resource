@@ -33,7 +33,8 @@ const (
 
 // AWS China partition's regions.
 const (
-	CnNorth1RegionID = "cn-north-1" // China (Beijing).
+	CnNorth1RegionID     = "cn-north-1"     // China (Beijing).
+	CnNorthwest1RegionID = "cn-northwest-1" // China (Ningxia).
 )
 
 // AWS GovCloud (US) partition's regions.
@@ -1561,8 +1562,28 @@ var awscnPartition = partition{
 		"cn-north-1": region{
 			Description: "China (Beijing)",
 		},
+		"cn-northwest-1": region{
+			Description: "China (Ningxia)",
+		},
 	},
 	Services: services{
+		"ecr": service{
+
+			Endpoints: endpoints{
+				"cn-north-1": endpoint{
+					Hostname: "api.ecr.cn-north-1.amazonaws.com.cn",
+					CredentialScope: credentialScope{
+						Region: "cn-north-1",
+					},
+				},
+				"cn-northwest-1": endpoint{
+					Hostname: "api.ecr.cn-northwest-1.amazonaws.com.cn",
+					CredentialScope: credentialScope{
+						Region: "cn-northwest-1",
+					},
+				},
+			},
+		},
 		"autoscaling": service{
 			Defaults: endpoint{
 				Protocols: []string{"http", "https"},

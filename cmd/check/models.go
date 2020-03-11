@@ -15,6 +15,7 @@ type Source struct {
 	AWSAccessKeyID     string `json:"aws_access_key_id"`
 	AWSSecretAccessKey string `json:"aws_secret_access_key"`
 	AWSSessionToken    string `json:"aws_session_token"`
+	AWSDefaultRegion   string `json:"aws_default_region"`
 }
 
 type Version struct {

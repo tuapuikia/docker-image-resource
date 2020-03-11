@@ -44,6 +44,8 @@ func main() {
 	os.Setenv("AWS_ACCESS_KEY_ID", request.Source.AWSAccessKeyID)
 	os.Setenv("AWS_SECRET_ACCESS_KEY", request.Source.AWSSecretAccessKey)
 	os.Setenv("AWS_SESSION_TOKEN", request.Source.AWSSessionToken)
+	os.Setenv("AWS_DEFAULT_REGION", request.Source.AWSDefaultRegion)
+	os.Setenv("AWS_REGION", request.Source.AWSDefaultRegion)
 
 	// silence benign ecr-login errors/warnings
 	seelog.UseLogger(seelog.Disabled)
